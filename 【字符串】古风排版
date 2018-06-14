@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include<string.h>
+int main(int argc, char *argv[])
+{
+    int h;
+    scanf("%d",&h);
+    char s[1001];
+    char a[100][100];
+    for(int i=0;i<100;i++)
+        for(int j=0;j<100;j++)
+            a[i][j]=' ';
+    getchar();
+    gets(s);
+    int len=strlen(s);
+    int l;
+    if(len/h*h==len)
+        l=len/h-1;
+    else
+        l=len/h;
+    int i,j;
+    int k=0;
+    for(i=l;i>=0;i--){
+        for(j=0;j<h;j++){
+            a[j][i]=s[k++];
+            if(k>=len)
+                break;
+        }
+        if(k>=len)
+            break;
+    }
+    for(i=0;i<h;i++){
+        for(j=0;j<=l;j++)
+            printf("%c",a[i][j]);
+        printf("\n");
+    } 
+    return 0;
+}
