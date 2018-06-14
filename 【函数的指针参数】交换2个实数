@@ -1,0 +1,19 @@
+#include <stdio.h>
+void mySwap(double*,double*);
+
+int main()
+{
+    double a,b;
+    while(scanf("%lf%lf",&a,&b)!=EOF){
+        mySwap(&a,&b);
+        printf("%.2f %.2f\n",a,b);
+    }
+    return 0;
+}
+void mySwap(double *p,double *q)
+{
+    double t;
+    t=*p;
+    *p=*q;
+    *q=t;
+}
