@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include<string.h>
+int main(int argc, char *argv[])
+{
+    int a[26]={
+        0
+    };
+    char s[101];
+    gets(s);
+    int l=strlen(s);
+    int ss=0;
+    for(int i=0;i<l;i++){
+        if((s[i]-'A'<26&&s[i]-'A'>=0)||(s[i]-'a'<26&&s[i]-'a'>=0)){
+            int x=s[i]-'A'<26&&s[i]-'A'>=0?s[i]-'A':s[i]-'a';
+            a[x]++;
+            ss++;
+        }
+      
+    }
+    for(int i=0;i<26;i++)
+        if(a[i]!=0)
+            printf("%c:%.1f%%\n",'A'+i,(float)a[i]/ss*100);
+    return 0;
+}
