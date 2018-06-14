@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdio.h>
+
+int calc(int,int,int*,int*);
+int main()
+{
+     int h,f;
+     while(scanf("%d%d",&h,&f)!=EOF){
+     int c,r;
+     	if(calc(h,f,&c,&r))
+        	printf("%d %d\n",c,r);
+        else
+            printf("no solution\n"); 
+     }
+     return 0; 
+}
+int calc(int a,int b,int*c,int*r)
+{
+    *c=(4*a-b)/2;
+    *r=(b-2*a)/2;
+    	if(b<(2*a)||(4*a)<b||b%2!=0)
+    	{
+    	return 0;
+    	}
+    	else
+    	{
+    	return 1;
+    	}
+}
