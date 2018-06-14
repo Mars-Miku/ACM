@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h> 
+#include <time.h>
+
+void month_day(int, int, int*, int*);
+
+int main()
+{
+	int d, m, y, yd;
+	while (scanf("%d%d", &y, &yd) != EOF) {
+		month_day(y, yd, &m, &d);
+		printf("%d-%d\n", m, d);
+	}
+}
+void month_day(int y, int yd, int *p1, int *p2)
+{
+	int days[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+	if (y%4==0&&y%100!=0||y%400==0)
+	{
+		days[1] = 29;
+	}
+	*p1 = 1;
+	while (yd>days[*p1 - 1])
+	{
+		yd -= days[*p1 - 1];
+		(*p1)++;
+	}
+	*p2 = yd;
+}
