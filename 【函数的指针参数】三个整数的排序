@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+void sort(int*,int*);
+int main() 
+{ 
+    int a,b,c; 
+    scanf("%d%d%d",&a,&b,&c); 
+    sort(&a,&b); 
+    sort(&a,&c); 
+    sort(&b,&c); 
+    printf("%d %d %d\n",a,b,c); 
+}
+void sort(int*p,int*q)
+{
+    int t;
+    if(*p>*q)
+    {t=*p;*p=*q;*q=t;}
+}
