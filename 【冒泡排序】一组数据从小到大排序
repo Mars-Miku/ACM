@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+    int a[7];
+    for(int i=0;i<7;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(int i=0;i<6;i++)           //控制排序次数
+    {
+        for(int j=0;j<7-i;j++)     //控制交换次数
+        {
+            if(a[j]>a[j+1])
+            {
+                int temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+            }
+        }
+    }
+    for(int i=0;i<7;i++)
+    {
+        printf("%d",a[i]);
+    }
+    return 0;
+}
